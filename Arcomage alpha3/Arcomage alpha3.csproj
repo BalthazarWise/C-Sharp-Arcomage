@@ -1,0 +1,368 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3D9DA5E2-D327-4D39-9C80-C645B10F6C16}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Arcomage_alpha3</RootNamespace>
+    <AssemblyName>Arcomage alpha3</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="EndGameForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GameField.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Card.cs" />
+    <Compile Include="EndGameForm.xaml.cs">
+      <DependentUpon>EndGameForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GameField.xaml.cs">
+      <DependentUpon>GameField.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GameInfo.cs" />
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="NetMan.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ArcomageMenuBackground.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\background.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\background2.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\CardBackgroundPlayer1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\CardBackgroundPlayer2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\PlayerInfo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\Tower and wall part.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\TowerPlayer1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\TowerPlayer2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\TowerSizeLabelImage.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\Wall.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Cards\0.png" />
+    <Resource Include="Images\Cards\1.png" />
+    <Resource Include="Images\Cards\10.png" />
+    <Resource Include="Images\Cards\100.png" />
+    <Resource Include="Images\Cards\101.png" />
+    <Resource Include="Images\Cards\11.png" />
+    <Resource Include="Images\Cards\12.png" />
+    <Resource Include="Images\Cards\13.png" />
+    <Resource Include="Images\Cards\14.png" />
+    <Resource Include="Images\Cards\15.png" />
+    <Resource Include="Images\Cards\16.png" />
+    <Resource Include="Images\Cards\17.png" />
+    <Resource Include="Images\Cards\18.png" />
+    <Resource Include="Images\Cards\19.png" />
+    <Resource Include="Images\Cards\2.png" />
+    <Resource Include="Images\Cards\20.png" />
+    <Resource Include="Images\Cards\21.png" />
+    <Resource Include="Images\Cards\22.png" />
+    <Resource Include="Images\Cards\23.png" />
+    <Resource Include="Images\Cards\24.png" />
+    <Resource Include="Images\Cards\25.png" />
+    <Resource Include="Images\Cards\26.png" />
+    <Resource Include="Images\Cards\27.png" />
+    <Resource Include="Images\Cards\28.png" />
+    <Resource Include="Images\Cards\29.png" />
+    <Resource Include="Images\Cards\3.png" />
+    <Resource Include="Images\Cards\30.png" />
+    <Resource Include="Images\Cards\31.png" />
+    <Resource Include="Images\Cards\32.png" />
+    <Resource Include="Images\Cards\33.png" />
+    <Resource Include="Images\Cards\34.png" />
+    <Resource Include="Images\Cards\35.png" />
+    <Resource Include="Images\Cards\36.png" />
+    <Resource Include="Images\Cards\37.png" />
+    <Resource Include="Images\Cards\38.png" />
+    <Resource Include="Images\Cards\39.png" />
+    <Resource Include="Images\Cards\4.png" />
+    <Resource Include="Images\Cards\40.png" />
+    <Resource Include="Images\Cards\41.png" />
+    <Resource Include="Images\Cards\42.png" />
+    <Resource Include="Images\Cards\43.png" />
+    <Resource Include="Images\Cards\44.png" />
+    <Resource Include="Images\Cards\45.png" />
+    <Resource Include="Images\Cards\46.png" />
+    <Resource Include="Images\Cards\47.png" />
+    <Resource Include="Images\Cards\48.png" />
+    <Resource Include="Images\Cards\49.png" />
+    <Resource Include="Images\Cards\5.png" />
+    <Resource Include="Images\Cards\50.png" />
+    <Resource Include="Images\Cards\51.png" />
+    <Resource Include="Images\Cards\52.png" />
+    <Resource Include="Images\Cards\53.png" />
+    <Resource Include="Images\Cards\54.png" />
+    <Resource Include="Images\Cards\55.png" />
+    <Resource Include="Images\Cards\56.png" />
+    <Resource Include="Images\Cards\57.png" />
+    <Resource Include="Images\Cards\58.png" />
+    <Resource Include="Images\Cards\59.png" />
+    <Resource Include="Images\Cards\6.png" />
+    <Resource Include="Images\Cards\60.png" />
+    <Resource Include="Images\Cards\61.png" />
+    <Resource Include="Images\Cards\62.png" />
+    <Resource Include="Images\Cards\63.png" />
+    <Resource Include="Images\Cards\64.png" />
+    <Resource Include="Images\Cards\65.png" />
+    <Resource Include="Images\Cards\66.png" />
+    <Resource Include="Images\Cards\67.png" />
+    <Resource Include="Images\Cards\68.png" />
+    <Resource Include="Images\Cards\69.png" />
+    <Resource Include="Images\Cards\7.png" />
+    <Resource Include="Images\Cards\70.png" />
+    <Resource Include="Images\Cards\71.png" />
+    <Resource Include="Images\Cards\72.png" />
+    <Resource Include="Images\Cards\73.png" />
+    <Resource Include="Images\Cards\74.png" />
+    <Resource Include="Images\Cards\75.png" />
+    <Resource Include="Images\Cards\76.png" />
+    <Resource Include="Images\Cards\77.png" />
+    <Resource Include="Images\Cards\78.png" />
+    <Resource Include="Images\Cards\79.png" />
+    <Resource Include="Images\Cards\8.png" />
+    <Resource Include="Images\Cards\80.png" />
+    <Resource Include="Images\Cards\81.png" />
+    <Resource Include="Images\Cards\82.png" />
+    <Resource Include="Images\Cards\83.png" />
+    <Resource Include="Images\Cards\84.png" />
+    <Resource Include="Images\Cards\85.png" />
+    <Resource Include="Images\Cards\86.png" />
+    <Resource Include="Images\Cards\87.png" />
+    <Resource Include="Images\Cards\88.png" />
+    <Resource Include="Images\Cards\89.png" />
+    <Resource Include="Images\Cards\9.png" />
+    <Resource Include="Images\Cards\90.png" />
+    <Resource Include="Images\Cards\91.png" />
+    <Resource Include="Images\Cards\92.png" />
+    <Resource Include="Images\Cards\93.png" />
+    <Resource Include="Images\Cards\94.png" />
+    <Resource Include="Images\Cards\95.png" />
+    <Resource Include="Images\Cards\96.png" />
+    <Resource Include="Images\Cards\97.png" />
+    <Resource Include="Images\Cards\98.png" />
+    <Resource Include="Images\Cards\99.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Cards\0_locked.png" />
+    <Resource Include="Images\Cards\100_locked.png" />
+    <Resource Include="Images\Cards\101_locked.png" />
+    <Resource Include="Images\Cards\10_locked.png" />
+    <Resource Include="Images\Cards\11_locked.png" />
+    <Resource Include="Images\Cards\12_locked.png" />
+    <Resource Include="Images\Cards\13_locked.png" />
+    <Resource Include="Images\Cards\14_locked.png" />
+    <Resource Include="Images\Cards\15_locked.png" />
+    <Resource Include="Images\Cards\16_locked.png" />
+    <Resource Include="Images\Cards\17_locked.png" />
+    <Resource Include="Images\Cards\18_locked.png" />
+    <Resource Include="Images\Cards\19_locked.png" />
+    <Resource Include="Images\Cards\1_locked.png" />
+    <Resource Include="Images\Cards\20_locked.png" />
+    <Resource Include="Images\Cards\21_locked.png" />
+    <Resource Include="Images\Cards\22_locked.png" />
+    <Resource Include="Images\Cards\23_locked.png" />
+    <Resource Include="Images\Cards\24_locked.png" />
+    <Resource Include="Images\Cards\25_locked.png" />
+    <Resource Include="Images\Cards\26_locked.png" />
+    <Resource Include="Images\Cards\27_locked.png" />
+    <Resource Include="Images\Cards\28_locked.png" />
+    <Resource Include="Images\Cards\29_locked.png" />
+    <Resource Include="Images\Cards\2_locked.png" />
+    <Resource Include="Images\Cards\30_locked.png" />
+    <Resource Include="Images\Cards\31_locked.png" />
+    <Resource Include="Images\Cards\32_locked.png" />
+    <Resource Include="Images\Cards\33_locked.png" />
+    <Resource Include="Images\Cards\34_locked.png" />
+    <Resource Include="Images\Cards\35_locked.png" />
+    <Resource Include="Images\Cards\36_locked.png" />
+    <Resource Include="Images\Cards\37_locked.png" />
+    <Resource Include="Images\Cards\38_locked.png" />
+    <Resource Include="Images\Cards\39_locked.png" />
+    <Resource Include="Images\Cards\3_locked.png" />
+    <Resource Include="Images\Cards\40_locked.png" />
+    <Resource Include="Images\Cards\41_locked.png" />
+    <Resource Include="Images\Cards\42_locked.png" />
+    <Resource Include="Images\Cards\43_locked.png" />
+    <Resource Include="Images\Cards\44_locked.png" />
+    <Resource Include="Images\Cards\45_locked.png" />
+    <Resource Include="Images\Cards\46_locked.png" />
+    <Resource Include="Images\Cards\47_locked.png" />
+    <Resource Include="Images\Cards\48_locked.png" />
+    <Resource Include="Images\Cards\49_locked.png" />
+    <Resource Include="Images\Cards\4_locked.png" />
+    <Resource Include="Images\Cards\50_locked.png" />
+    <Resource Include="Images\Cards\51_locked.png" />
+    <Resource Include="Images\Cards\52_locked.png" />
+    <Resource Include="Images\Cards\53_locked.png" />
+    <Resource Include="Images\Cards\54_locked.png" />
+    <Resource Include="Images\Cards\55_locked.png" />
+    <Resource Include="Images\Cards\56_locked.png" />
+    <Resource Include="Images\Cards\57_locked.png" />
+    <Resource Include="Images\Cards\58_locked.png" />
+    <Resource Include="Images\Cards\59_locked.png" />
+    <Resource Include="Images\Cards\5_locked.png" />
+    <Resource Include="Images\Cards\60_locked.png" />
+    <Resource Include="Images\Cards\61_locked.png" />
+    <Resource Include="Images\Cards\62_locked.png" />
+    <Resource Include="Images\Cards\63_locked.png" />
+    <Resource Include="Images\Cards\64_locked.png" />
+    <Resource Include="Images\Cards\65_locked.png" />
+    <Resource Include="Images\Cards\66_locked.png" />
+    <Resource Include="Images\Cards\67_locked.png" />
+    <Resource Include="Images\Cards\68_locked.png" />
+    <Resource Include="Images\Cards\69_locked.png" />
+    <Resource Include="Images\Cards\6_locked.png" />
+    <Resource Include="Images\Cards\70_locked.png" />
+    <Resource Include="Images\Cards\71_locked.png" />
+    <Resource Include="Images\Cards\72_locked.png" />
+    <Resource Include="Images\Cards\73_locked.png" />
+    <Resource Include="Images\Cards\74_locked.png" />
+    <Resource Include="Images\Cards\75_locked.png" />
+    <Resource Include="Images\Cards\76_locked.png" />
+    <Resource Include="Images\Cards\77_locked.png" />
+    <Resource Include="Images\Cards\78_locked.png" />
+    <Resource Include="Images\Cards\79_locked.png" />
+    <Resource Include="Images\Cards\7_locked.png" />
+    <Resource Include="Images\Cards\80_locked.png" />
+    <Resource Include="Images\Cards\81_locked.png" />
+    <Resource Include="Images\Cards\82_locked.png" />
+    <Resource Include="Images\Cards\83_locked.png" />
+    <Resource Include="Images\Cards\84_locked.png" />
+    <Resource Include="Images\Cards\85_locked.png" />
+    <Resource Include="Images\Cards\86_locked.png" />
+    <Resource Include="Images\Cards\87_locked.png" />
+    <Resource Include="Images\Cards\88_locked.png" />
+    <Resource Include="Images\Cards\89_locked.png" />
+    <Resource Include="Images\Cards\8_locked.png" />
+    <Resource Include="Images\Cards\90_locked.png" />
+    <Resource Include="Images\Cards\91_locked.png" />
+    <Resource Include="Images\Cards\92_locked.png" />
+    <Resource Include="Images\Cards\93_locked.png" />
+    <Resource Include="Images\Cards\94_locked.png" />
+    <Resource Include="Images\Cards\95_locked.png" />
+    <Resource Include="Images\Cards\96_locked.png" />
+    <Resource Include="Images\Cards\97_locked.png" />
+    <Resource Include="Images\Cards\98_locked.png" />
+    <Resource Include="Images\Cards\99_locked.png" />
+    <Resource Include="Images\Cards\9_locked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\EndGameLooser.png" />
+    <Resource Include="Images\EndGameWinner.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
